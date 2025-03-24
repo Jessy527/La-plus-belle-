@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un message pour toi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe4e1;
+            color: #333;
+            padding: 50px;
+            overflow: hidden;
+            position: relative;
+        }
+        .message {
+            font-size: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            position: relative;
+            z-index: 10;
+        }
+        h1 {
+            color: #d63384;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            from {
+                transform: translateY(-10vh);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Pour Manon 💕</h1>
+    <div class="message">
+        <p>Mon amour,</p>
+        <p>Chaque jour avec toi est un cadeau que la vie m’a offert. Depuis que tu es entrée dans ma vie, tout semble plus beau, plus doux, plus magique. Tu es ce rayon de soleil qui illumine mes journées, ce souffle d’air frais qui rend chaque instant plus léger.</p>
+        <p>Je veux que tu saches à quel point tu es précieuse pour moi. Ta gentillesse, ton sourire, ta façon de me comprendre sans même que j’aie besoin de parler… tout chez toi me fait réaliser à quel point j’ai de la chance.</p>
+        <p>Peu importe la distance ou le temps qui passe, sache que mon cœur bat toujours pour toi. Je suis fier de nous, de ce que l’on construit ensemble, et j’ai hâte de vivre encore mille souvenirs à tes côtés.</p>
+        <p>Merci d’être toi, merci d’être là.</p>
+        <p>Je t’aime plus que tout,</p>
+        <p><strong>Jessy ❤️</strong></p>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            document.body.appendChild(heart);
+
+            // Position aléatoire en haut de l'écran
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.top = "-10px";
+            heart.style.fontSize = Math.random() * 20 + 10 + "px";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s"; // Vitesse aléatoire
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000); // Supprime après animation
+        }
+
+        setInterval(createHeart, 300); // Génère un cœur toutes les 300ms
+    </script>
+</body>
+</html>
